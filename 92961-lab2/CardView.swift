@@ -14,13 +14,8 @@ struct CardView: View{
     var width = CGFloat(100)
     var height = CGFloat(200)
     
-    
+    @Binding var colorTheme: ColorTheme
     @State var isReversed = false
-    
-    @State var primaryColor = Color.white
-    @State var secondaryColor = Color.blue
-    @State var backgroundColor = Color.blue
-    @State var onBackgroundColor = Color.white
     
     
     var body: some View{
@@ -30,20 +25,19 @@ struct CardView: View{
         
         ZStack {
                     Group {
-                        rectangle.fill(onBackgroundColor)
-//                            .frame(width: width, height: height)
-                        
+                        rectangle.fill(colorTheme.primary)
+
                         rectangle
                             .strokeBorder(style: StrokeStyle(lineWidth: 2))
-                            .foregroundColor(backgroundColor)
-//                           .frame(width: width, height: height)
+                            .foregroundColor(colorTheme.background)
+
                         
                         Text(content).font(.largeTitle)
                         
                     }
                     rectangle
-                        .fill(backgroundColor)
-//                        .frame(width: width, height: height)
+                        .fill(colorTheme.background)
+
                         .opacity(isReversed ? 1 : 0)
                     
         }.onTapGesture() {
