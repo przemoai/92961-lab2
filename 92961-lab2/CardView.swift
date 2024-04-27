@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-struct drawCard: View{
+struct CardView: View{
     var content: String
     var width = CGFloat(100)
     var height = CGFloat(200)
@@ -31,19 +31,19 @@ struct drawCard: View{
         ZStack {
                     Group {
                         rectangle.fill(onBackgroundColor)
-                            .frame(width: width, height: height)
+//                            .frame(width: width, height: height)
                         
                         rectangle
                             .strokeBorder(style: StrokeStyle(lineWidth: 2))
                             .foregroundColor(backgroundColor)
-                            .frame(width: width, height: height)
-                            
+//                           .frame(width: width, height: height)
+                        
                         Text(content).font(.largeTitle)
                         
                     }
                     rectangle
                         .fill(backgroundColor)
-                        .frame(width: width, height: height)
+//                        .frame(width: width, height: height)
                         .opacity(isReversed ? 1 : 0)
                     
         }.onTapGesture() {
