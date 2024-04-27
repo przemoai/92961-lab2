@@ -8,16 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+  
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        
+        var styles = [""]
+        let emojis = ["🫠","🙃","😊","💄"]
+        
+        
+        
+        HStack {
+            
+            ForEach(emojis, id: \.self) {emoji in
+                    
+                drawCard(content: emoji)
+                }
+            
         }
-        .padding()
+           
+            
+                
+            
+            
+        }
+        
     }
-}
+
 
 #Preview {
     ContentView()
